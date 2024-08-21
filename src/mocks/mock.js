@@ -16,6 +16,7 @@ export const mock_goals = [
         motivation: "Signigica mi realización como profecional y una fuente grande de ingresos",
         category: "Trabajo",
         finalitation_date: "2025-1-1",
+        completed:false,
         steps: [
             {
                 id: 1,
@@ -46,6 +47,7 @@ export const mock_goals = [
         motivation: "Signigica mi realización como profecional y una fuente grande de ingresos",
         category: "Trabajo",
         finalitation_date: "2025-1-1",
+        completed:false,
         steps: [
             {
                 id: 1,
@@ -163,3 +165,74 @@ export const DAYS_OF_THE_WEEK = {
 }
 
 
+[
+    {
+      id: 1,
+      title: 'Obtener un trabajo como programador',
+      motivation: 
+        'Signigica mi realización como profecional y una fuente grande de ingresos',
+      category: 'Trabajo',
+      finalitation_date: '2025-1-1',
+      steps: [
+        {
+          id: 1,
+          title: 'Actualizar cv',
+          checked: true,
+          description: 'Enllace al protfolio, proyectos importantes etc',
+          position: 0
+        },
+        {
+          id: 2,
+          title: 'Revisar bolsas de emprelo',
+          checked: false,
+          description: '',
+          position: 1
+        }
+      ],
+      notes: [
+        {
+          id: 1,
+          note: 'El primer día me parti el pie',
+          create_date: '2024-11-2'
+        }
+      ]
+    },
+    {
+      id: 2,
+      title: 'Obtener un trabajo como programador',
+      motivation: 
+        'Signigica mi realización como profecional y una fuente grande de ingresos',
+      category: 'Trabajo',
+      finalitation_date: '2025-1-1',
+      steps: [
+        {
+          id: 1,
+          title: 'Actualizar cv',
+          checked: true,
+          description: 'Enllace al protfolio, proyectos importantes etc',
+          position: 0
+        },
+        {
+          id: 2,
+          title: 'Revisar bolsas de emprelo',
+          checked: false,
+          description: '',
+          position: 1
+        }
+      ],
+      notes: [
+        {
+          id: 1,
+          note: 'El primer día me parti el pie',
+          create_date: '2024-11-2'
+        }
+      ]
+    },
+    {
+      title: 'fsd',
+      motivation: '',
+      category: '',
+      finalitation_date: '',
+      id: 'Ma9b84C0v',
+    }
+  ]

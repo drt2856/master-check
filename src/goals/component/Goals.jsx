@@ -8,11 +8,12 @@ export default function Goals() {
     const { goals } = useGoal();
 
     const [showModal, setShowModal] = useState("none");
+    
 
 
     return (
         <div>
-            {/* <div>
+            <div>
                 <button className="btn btn-primary">
                     Todos
                 </button>
@@ -31,9 +32,8 @@ export default function Goals() {
             <button
                 className="btn btn-primary redounder"
                 onClick={() => setShowModal("ADD")}
-            >+</button> */}
+            >+</button> 
 
-            <GoalDetail goal={goals[0]}/>
 
         </div>
 

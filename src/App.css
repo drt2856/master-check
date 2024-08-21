@@ -1,30 +1,8 @@
-*{
+* {
     font-family: sans-serif;
     font-size: x-large;
 }
 
-.btn {
-    font-size: large;
-    padding: 5px;
-    border-radius: 5px;
-    margin: 10px;
-}
-
-.btn-primary {
-    color: aliceblue;
-    background-color: rgb(49, 49, 160);
-}
-.btn-secondary {
-    color: aliceblue;
-    background-color: rgb(3, 3, 39);
-}
-
-.btn-primary:hover {
-    background-color: rgb(92, 92, 230);
-}
-.btn-secondary:hover {
-    background-color: rgb(6, 6, 94);
-}
 
 .redounder {
     border-radius: 100%;
@@ -51,7 +29,7 @@
     flex-direction: column;
 }
 
-.modal-body{
+.modal-body {
     background-color: azure;
     width: 80%;
     height: 500px;
@@ -61,19 +39,48 @@
     flex-direction: column;
     align-items: center;
 }
-.modal-body>div{
+
+.modal-body>div {
     margin: auto 0;
 }
 
-.goal{
+.goal {
     border-bottom: solid 1px rgb(0, 0, 0);
 }
 
-.min-container{
+.min-container {
     max-width: 500px;
 }
-body{
+
+body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+
+.btn-redounder-left {
+    width: 10%;
+    border-top-left-radius: 100%;
+    border-bottom-left-radius: 100%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: 0;
+    padding: 5px;
+   
+}
+.btn-in-the-middle{
+    width: 80%;
+    border-radius: 0;
+    margin: 0;
+    padding: 5px;
+}
+.btn-redounder-rihgt {
+    width: 10%;
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 100%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: 0;
+    padding: 5px;
 }

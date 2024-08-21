@@ -6,7 +6,7 @@ export function useGoal() {
     const context = useContext(goalContext)
 
   if(context === undefined){
-    throw new Error("useCart must be used within a CartProvider")
+    throw new Error("useGoal must be used within a GoalProvider")
   }
   return context
 }

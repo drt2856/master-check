@@ -1,26 +1,64 @@
 import React, { createContext, useCreteContext } from "react"
 import { useState } from "react";
 import { mock_goals } from "../../mocks/mock";
+import shortid from "shortid";
 
 export const goalContext = createContext();
 
-export function GoalProvider({children}) {
-    const [goals, setGoals] = useState(mock_goals)
+function useSaveGoalsLocalStorage() {
+    function get() {
+        return JSON.parse(localStorage.getItem("goals"))
+    }
+    function set(data) {
+        return localStorage.setItem("goals", JSON.stringify(data))
+    }
+    return ({ get, set })
+}
+
+export function GoalProvider({ children }) {
+
+    const { set, get } = useSaveGoalsLocalStorage()
+    const [goals, setGoals] = useState(getData())
+
+    function getData() {
+        if (!get()) {
+            console.log(!get(), get());
+            return mock_goals
+        } else {
+            return get()
+        }
+    }
 
     function createGoal(goal) {
-        setGoals(prevState=>([...prevState,goal]))
+        goal.id = shortid.generate()
+        setGoals(prevState => {
+            const newState = [...prevState, goal];
+            set(newState)
+            return (newState)
+        });
     }
-    function editGoal(goal) {
+    function editGoal(updatedGoal) {
+        console.log(updatedGoal.completed);
+        setGoals(prevState => {
+            const newState = prevState.map(goal =>
+                goal.id === updatedGoal.id ? updatedGoal : goal
+            );
+            set(newState);
+            return newState;
+        });
+    }
 
-    }
-    function goalCompleted(id) {
-
-    }
+    
+    
     function deleteGoal(goal_id) {
-        setGoals(prevState=>{
-            return prevState.filter(goal=>(
-                goal_id!==goal&&goal
+        
+        setGoals(prevState => {
+            const newState = prevState.filter(goal => (
+                goal_id != goal.id
             ))
+            console.log(goal_id, newState);
+            set(newState)
+            return newState;
         })
     }
     function changPositionOfGoal(goal) {
@@ -35,7 +73,8 @@ export function GoalProvider({children}) {
                 editGoal,
                 deleteGoal,
                 changPositionOfGoal
-                }}
+
+            }}
         >
             {children}
         </goalContext.Provider>

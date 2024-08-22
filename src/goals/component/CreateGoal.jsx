@@ -9,7 +9,9 @@ export default function CreateGoal({setShowModal}) {
         title:"",
         motivation:"",
         category:"",
-        finalitation_date:""
+        finalitation_date:"",
+        steps:[],
+        notes:[]
     })
 
     function handleCreate(event) {
@@ -26,8 +28,8 @@ export default function CreateGoal({setShowModal}) {
     }
 
     return (
-        <div className="modal">
-            <form className="modal-body" onSubmit={handleCreate}>
+        <div className="my-modal">
+            <form className="my-modal-body" onSubmit={handleCreate}>
                 <div>
                     <label htmlFor="title">Titulo</label>
                     <input type="text" id="title" value={goal.title} onChange={handleChange}/>

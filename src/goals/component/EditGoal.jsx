@@ -21,8 +21,8 @@ export default function EditGoal({ setShowModal, prevGoal }) {
     }
 
     return (
-        <div className="modal">
-            <form className="modal-body" onSubmit={handleCreate}>
+        <div className="my-modal">
+            <form className="my-modal-body" onSubmit={handleCreate}>
                 <div>
                     <label htmlFor="title">Titulo</label>
                     <input type="text" id="title" value={goal.title} onChange={handleChange} />

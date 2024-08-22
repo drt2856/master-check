@@ -48,10 +48,8 @@ export function GoalProvider({ children }) {
         });
     }
 
-    
-    
     function deleteGoal(goal_id) {
-        
+
         setGoals(prevState => {
             const newState = prevState.filter(goal => (
                 goal_id != goal.id
@@ -65,6 +63,33 @@ export function GoalProvider({ children }) {
 
     }
 
+    function createStep(step, goalId) {
+        step.id = shortid.generate()
+        const goal = goals.find(goal => goal.id === goalId)
+        goal.steps.push(step)
+        editGoal(goal)
+    }
+
+    function editStep(step, goalId) {
+        
+        const goal = goals.find(goal => goal.id == goalId)
+        const auxSteps = goal.steps.map(auxStep =>
+            goal.id == step.id ? step : auxStep
+        )
+        goal.steps = auxSteps;
+        editGoal(goal)
+    }
+
+    function deleteStep(stepId,goalId) {
+
+        const goal = goals.find(goal=> goal.id==goalId);
+        goal.steps= goal.steps.filter(step=>step!=stepId)
+        
+        editGoal(goal)
+        
+    }
+
+
     return (
         <goalContext.Provider
             value={{
@@ -72,8 +97,10 @@ export function GoalProvider({ children }) {
                 createGoal,
                 editGoal,
                 deleteGoal,
-                changPositionOfGoal
-
+                changPositionOfGoal,
+                createStep,
+                editStep,
+                deleteStep
             }}
         >
             {children}

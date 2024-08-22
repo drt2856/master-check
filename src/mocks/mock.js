@@ -43,7 +43,7 @@ export const mock_goals = [
         ]
     },{
         id: 2,
-        title: "Obtener un trabajo como programador",
+        title: "Correr 20 millas",
         motivation: "Signigica mi realización como profecional y una fuente grande de ingresos",
         category: "Trabajo",
         finalitation_date: "2025-1-1",

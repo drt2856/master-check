@@ -13,7 +13,7 @@
     bottom: 20px;
 }
 
-.modal {
+.my-modal {
     background-color: rgba(9, 17, 90, 0.527);
     position: fixed;
     top: 0;
@@ -29,10 +29,11 @@
     flex-direction: column;
 }
 
-.modal-body {
+.my-modal-body {
     background-color: azure;
     width: 80%;
-    height: 500px;
+    max-width: 500px;
+   
     padding: 20px;
     margin-top: 40px;
     display: flex;
@@ -40,8 +41,8 @@
     align-items: center;
 }
 
-.modal-body>div {
-    margin: auto 0;
+.my-modal-body>div {
+    margin: 10px auto;
 }
 
 .goal {
@@ -83,4 +84,16 @@ body {
     border-bottom-left-radius: 0;
     margin-left: 0;
     padding: 5px;
+}
+
+.over-base {
+    background-color: azure;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    width: 500px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }

@@ -14,8 +14,8 @@ export default function DeleteGoal({ setShowModal, goal_id }) {
 
 
     return (
-        <div className="modal">
-            <form className="modal-body" onSubmit={()=>deleteG(goal_id)}>
+        <div className="my-modal">
+            <form className="my-modal-body" onSubmit={()=>deleteG(goal_id)}>
                 Esta seguro que desea eliminar esta meta
                 <div className="push-bottom">
                     <button className="btn-secondary btn" onClick={() => setShowModal("none")}>

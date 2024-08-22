@@ -1,11 +1,11 @@
 import { useNavigate, useParams } from "react-router-dom";
 import NoteGoal from "./NoteGoal";
-import StepGoal from "./StepGoal";
 import { useGoal } from "../hooks/useGoal";
 import { useEffect, useState } from "react";
 import Tabs from "../../ui/tab/Tab";
 import DeleteGoal from "./DeleteGoal";
 import EditGoal from "./EditGoal";
+import { Steps } from "../../steps/components/Steps";
 
 export default function GoalDetail() {
 
@@ -30,6 +30,9 @@ export default function GoalDetail() {
         //falta hacer un filtro y una redireccion cuando el goal se completa para que no aparesca mas en le seccion principal
     }
 
+    if(!goal?.id){
+        return(<div>No encontrado</div>)
+    }
 
 
     return (
@@ -43,20 +46,20 @@ export default function GoalDetail() {
                                 <div className="goal-detail-bldy">
                                     <h1>{goal && goal.title}</h1>
                                     <p>
-                                        <i class="material-symbols-outlined">
+                                        <i className="material-symbols-outlined">
                                             military_tech
                                         </i>
                                         {goal && goal.motivation}</p>
 
                                     <div>
-                                        <i class="material-symbols-outlined">
+                                        <i className="material-symbols-outlined">
                                             label
                                         </i>
                                         {goal && goal.category}
                                     </div>
 
                                     <div className="d-inline">
-                                        <i class="material-symbols-outlined"> event_available</i>
+                                        <i className="material-symbols-outlined"> event_available</i>
                                         {goal && goal.finalitation_date}
                                     </div>
                                 </div>
@@ -65,21 +68,21 @@ export default function GoalDetail() {
                                     <button className="btn btn-outline-primary btn-redounder-left"
                                         onClick={()=>completeGoal()}
                                     >
-                                        <i class="material-symbols-outlined">
+                                        <i className="material-symbols-outlined">
                                             check
                                         </i>
                                     </button>
                                     <button className="btn btn-outline-success btn-in-the-middle"
                                      onClick={() => { setShowModal("edit") }}
                                     >
-                                        <i class="material-symbols-outlined">
+                                        <i className="material-symbols-outlined">
                                             edit
                                         </i>
                                     </button>
                                     <button className="btn btn-outline-warning btn-redounder-rihgt"
                                         onClick={() => { setShowModal("delete") }}
                                     >
-                                        <i class="material-symbols-outlined">
+                                        <i className="material-symbols-outlined">
                                             delete
                                         </i>
                                     </button>
@@ -89,15 +92,8 @@ export default function GoalDetail() {
                     },
                     {
                         label: "Pasos",
-
-                        component:
-                            <div id="steps">
-                                <h2>Pasos</h2>
-                                {/* deben ser ordenados por el atributo position */}
-                                {goal?.steps && goal.steps.map(step => (
-                                    <StepGoal step={step} key={step.id} />
-                                ))}
-                            </div>
+                        component:<Steps goal={goal}/>
+                            
                     },
                     {
                         label: "Notas",
@@ -106,7 +102,7 @@ export default function GoalDetail() {
                                 <h2>Notas</h2>
                                 {/* deben ser ordendas de  nuevo a  antigua */}
                                 {goal?.notes && goal.notes.map(note => (
-                                    <NoteGoal note={note} />
+                                    <NoteGoal key={note.id} note={note} />
                                 ))}
                             </div>
                     }

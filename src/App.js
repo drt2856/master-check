@@ -8,20 +8,25 @@ import GoalPage from './goals/pages/GoalPage';
 import GoalDetail from './goals/component/GoalDetail';
 import StepGoal from './steps/components/StepGoal';
 import { StepDetail } from './steps/components/StepDetail';
+import { CreateStep } from './steps/components/CreateStep';
 
 
 function App() {
 
 
   return (
+    <GoalProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<GoalPage />} />
+          <Route path="/goal/:id" element={<GoalDetail />} />
+          <Route path="/goal/:goalId/step/:stepId" element={<StepDetail />} />
+          <Route path="/goal/:goalId/step/create/" element={<CreateStep />} />
 
-    <Router>
-      <Routes>
-        <Route path="/" element={<GoalPage />} />
-        <Route path="/goal/:id" element={<GoalProvider><GoalDetail /></GoalProvider>}/>
-        <Route path="/goal/:goalId/step/:stepId" element={<GoalProvider><StepDetail/></GoalProvider>}/>
-      </Routes>
-    </Router>
+        </Routes>
+      </Router>
+    </GoalProvider>
+
 
 
   );

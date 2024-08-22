@@ -1,10 +1,11 @@
 import { useState } from "react";
 import StepGoal from "./StepGoal";
 import { StepDetail } from "./StepDetail";
+import { useNavigate } from "react-router-dom";
 
 export function Steps({ goal }) {
 
-    const [showModal, setShowModal] = useState("none");
+   const navigate = useNavigate()
 
     return (<div id="steps">
         <h2>Pasos</h2>
@@ -14,9 +15,9 @@ export function Steps({ goal }) {
         ))}
         <button
             className="btn btn-primary redounder"
-            onClick={() => setShowModal("ADD")}
+            onClick={() => navigate("/goal/"+goal.id+"/step/create/")}
         >+</button>
-        {showModal === "ADD" && <StepDetail setShowModal={setShowModal} goalId={goal.id} />}
+       
         
     </div>)
 

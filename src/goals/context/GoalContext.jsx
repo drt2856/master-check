@@ -38,7 +38,6 @@ export function GoalProvider({ children }) {
         });
     }
     function editGoal(updatedGoal) {
-        console.log(updatedGoal.completed);
         setGoals(prevState => {
             const newState = prevState.map(goal =>
                 goal.id === updatedGoal.id ? updatedGoal : goal

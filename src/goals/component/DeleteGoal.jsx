@@ -21,7 +21,7 @@ export default function DeleteGoal({ setShowModal, goal_id }) {
                     <button className="btn-secondary btn" onClick={() => setShowModal("none")}>
                         Cerrar
                     </button>
-                    <input type="submit" value="Crear" className="btn-primary btn" />
+                    <input type="submit" value="Eliminar" className="btn-danger btn" />
                 </div>
             </form>
 

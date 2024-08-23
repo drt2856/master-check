@@ -1,9 +1,25 @@
 import React, { useState } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import "./tab.css";
+import { useLocation, useParams } from 'react-router-dom';
 
 const Tabs = ({ tabs }) => {
-    const [activeTab, setActiveTab] = useState(tabs[0].label);
+
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const tab = queryParams.get('tab');
+
+    const intitialTab = () => {
+        console.log(tab);
+        if(!tab){
+            return tabs[0].label
+        }else{
+            return tab
+        }
+    }
+
+    const [activeTab, setActiveTab] = useState(intitialTab);
+
 
     const handleTabClick = (label) => {
         setActiveTab(label);

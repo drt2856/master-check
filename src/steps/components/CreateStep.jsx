@@ -7,20 +7,18 @@ export function CreateStep() {
     const { goalId } = useParams()
 
     const [step, setStep] = useState({
+        id: "",
         title: "",
-        motivation: "",
-        category: "",
-        finalitation_date: "",
-        completed:false,
-        steps: [],
-        notes: []
+        checked: false,
+        description: "",
+        position: -1
     })
 
     const { createStep } = useGoal()
 
     const navigate = useNavigate()
 
-   
+
     function handleChange(event) {
         if (event.target.value === " ") {
             return;
@@ -34,8 +32,12 @@ export function CreateStep() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        createStep(step, goalId)
-
+        if (step.title===""){
+            ///Mensaje de error
+            return
+        }
+            createStep(step, goalId)
+        navigate("/goal/2/tab?tab=Pasos")
     }
 
     return (

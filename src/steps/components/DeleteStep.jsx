@@ -8,7 +8,6 @@ export default function DeleteStep({ setShowModal, goalId, stepId }) {
     const navigate = useNavigate()
 
     function deleteG(event) {
-       console.log(stepId);
         deleteStep(stepId,goalId)
         navigate(-1)
     }

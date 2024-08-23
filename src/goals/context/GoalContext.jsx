@@ -51,7 +51,7 @@ export function GoalProvider({ children }) {
 
         setGoals(prevState => {
             const newState = prevState.filter(goal => (
-                goal_id != goal.id
+                goal_id !== goal.id
             ))
             console.log(goal_id, newState);
             set(newState)
@@ -70,22 +70,20 @@ export function GoalProvider({ children }) {
     }
 
     function editStep(step, goalId) {
-        
-        const goal = goals.find(goal => goal.id == goalId)
-        const auxSteps = goal.steps.map(auxStep =>
-            goal.id == step.id ? step : auxStep
-        )
-        goal.steps = auxSteps;
-        editGoal(goal)
+        const goal = goals.find(goal => goal.id === goalId);    
+        goal.steps = goal.steps.map(auxStep => auxStep.id === step.id ? step : auxStep);
+        editGoal(goal);
     }
+    
 
-    function deleteStep(stepId,goalId) {
+    function deleteStep(stepId, goalId) {
 
-        const goal = goals.find(goal=> goal.id==goalId);
-        goal.steps= goal.steps.filter(step=>step!=stepId)
-        
+        const goal = goals.find(goal => goal.id === goalId);
+
+        goal.steps = goal.steps.filter(step => step.id !== stepId)
+
         editGoal(goal)
-        
+
     }
 
 

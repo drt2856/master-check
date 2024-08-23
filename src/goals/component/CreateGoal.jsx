@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useGoal } from "../hooks/useGoal"
+import { useNavigate } from "react-router-dom";
 
-export default function CreateGoal({setShowModal}) {
+export default function CreateGoal() {
 
     const { createGoal } = useGoal();
+    const navigate = useNavigate()
 
     const [goal, setGoal] = useState({
         title:"",
@@ -17,7 +19,7 @@ export default function CreateGoal({setShowModal}) {
     function handleCreate(event) {
         event.preventDefault();
         createGoal(goal);
-        setShowModal("none")
+        navigate(-1)
     }
 
     function handleChange(event) {
@@ -28,7 +30,7 @@ export default function CreateGoal({setShowModal}) {
     }
 
     return (
-        <div className="my-modal">
+        <div className="">
             <form className="my-modal-body" onSubmit={handleCreate}>
                 <div>
                     <label htmlFor="title">Titulo</label>
@@ -47,7 +49,7 @@ export default function CreateGoal({setShowModal}) {
                     <input type="date" id="finalitation_date" value={goal.finalitation_date} onChange={handleChange}/>
                 </div>
                 <div className="push-bottom">
-                    <button className="btn-secondary btn" onClick={()=>setShowModal("none")}>
+                    <button className="btn-secondary btn" onClick={()=>navigate(-1)}>
                         Cerrar
                     </button>
                     <input type="submit" value="Crear" className="btn-primary btn"/>

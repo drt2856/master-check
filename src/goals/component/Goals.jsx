@@ -3,12 +3,13 @@ import { useGoal } from "../hooks/useGoal";
 import CreateGoal from "./CreateGoal";
 import Goal from "./Goal";
 import GoalDetail from "./GoalDetail";
+import { NavLink } from "react-router-dom";
 
 export default function Goals() {
     const { goals } = useGoal();
 
-    const [showModal, setShowModal] = useState("none");
-    
+
+
 
 
     return (
@@ -27,12 +28,12 @@ export default function Goals() {
                 ))}
             </div>
 
-            {showModal !== "none" && <CreateGoal setShowModal={setShowModal} />}
 
-            <button
+
+            <NavLink
+                to={"/goal/create/"}
                 className="btn btn-primary redounder"
-                onClick={() => setShowModal("ADD")}
-            >+</button> 
+            >+</NavLink>
 
 
         </div>

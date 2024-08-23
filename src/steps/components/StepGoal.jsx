@@ -10,7 +10,8 @@ export default function StepGoal({ step, goalId }) {
             <input type="checkbox" id="checked" checked={step?.checked} />
             <div>
                 <h3>{step?.title}</h3>
-                <p>{step?.description}</p>
+                <p>{step?.description.substring(0, 35)}</p>
+
             </div>
 
         </div>

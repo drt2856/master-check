@@ -11,7 +11,7 @@ export const CATEGORIES = {
 
 export const mock_goals = [
     {
-        id: 1,
+        id: "1",
         title: "Obtener un trabajo como programador",
         motivation: "Signigica mi realización como profecional y una fuente grande de ingresos",
         category: "Trabajo",
@@ -19,14 +19,14 @@ export const mock_goals = [
         completed:false,
         steps: [
             {
-                id: 1,
+                id: "1",
                 title: "Actualizar cv",
                 checked: true,
                 description: "Enllace al protfolio, proyectos importantes etc",
                 position: 0
             },
             {
-                id: 2,
+                id: "2",
                 title: "Revisar bolsas de emprelo",
                 checked: false,
                 description: "",
@@ -35,14 +35,14 @@ export const mock_goals = [
         ],
         notes: [
             {
-                id: 1,
+                id: "1",
                 note: "El primer día me parti el pie",
                 create_date: "2024-11-2"
             }
 
         ]
     },{
-        id: 2,
+        id:"2",
         title: "Correr 20 millas",
         motivation: "Signigica mi realización como profecional y una fuente grande de ingresos",
         category: "Trabajo",
@@ -50,14 +50,14 @@ export const mock_goals = [
         completed:false,
         steps: [
             {
-                id: 1,
+                id: "1",
                 title: "Actualizar cv",
                 checked: true,
                 description: "Enllace al protfolio, proyectos importantes etc",
                 position: 0
             },
             {
-                id: 2,
+                id: "2",
                 title: "Revisar bolsas de emprelo",
                 checked: false,
                 description: "",
@@ -66,7 +66,7 @@ export const mock_goals = [
         ],
         notes: [
             {
-                id: 1,
+                id: "1",
                 note: "El primer día me parti el pie",
                 create_date: "2024-11-2"
             }
@@ -77,7 +77,7 @@ export const mock_goals = [
 
 export const habits = [
     {
-        id: 0,
+        id: "0",
         title: "Levantarse a las 5 de la mañana",
         description: "Esto es para ir al trabajo",
         position: 0,
@@ -91,7 +91,7 @@ export const habits = [
         ]
     },
     {
-        id: 1,
+        id: "1",
         title: "Levantarse a las 5 de la mañana",
         description: "Esto es para ir al trabajo",
         position: 2,
@@ -107,13 +107,13 @@ export const habits = [
 ]
 export const tasks = [
     {
-        id: 0,
+        id: "0",
         title: "Arreglar el televisor",
         position: 0,
         sckechduule: "5:00 am"
     },
     {
-        id: 1,
+        id: "1",
         title: "Levantarse a las 5 de la mañana",
         description: "Esto es para ir al trabajo",
         position: 2,
@@ -129,24 +129,22 @@ export const tasks = [
 ]
 export const history = [
     {
-        id:1,
+        id:"1",
         date: "2024-8-17",
         habits_day:[
             {
-                id: 0,
+                id: "0",
                 title: "Levantarse a las 5 de la mañana",
                 checked: true,
                 description: "Enllace al protfolio, proyectos importantes etc",
-                position: 0,
-                checked:true
+                position: 0
             },
             {
-                id: 2,
+                id: "2",
                 title: "Dormir 6 horas",
                 checked: true,
                 description: "",
-                position: 1,
-                checked:false
+                position: 1
             },
         ]
 
@@ -163,76 +161,3 @@ export const DAYS_OF_THE_WEEK = {
     SABADO: "Sabado",
     DOMINGO: "Domingo"
 }
-
-
-[
-    {
-      id: 1,
-      title: 'Obtener un trabajo como programador',
-      motivation: 
-        'Signigica mi realización como profecional y una fuente grande de ingresos',
-      category: 'Trabajo',
-      finalitation_date: '2025-1-1',
-      steps: [
-        {
-          id: 1,
-          title: 'Actualizar cv',
-          checked: true,
-          description: 'Enllace al protfolio, proyectos importantes etc',
-          position: 0
-        },
-        {
-          id: 2,
-          title: 'Revisar bolsas de emprelo',
-          checked: false,
-          description: '',
-          position: 1
-        }
-      ],
-      notes: [
-        {
-          id: 1,
-          note: 'El primer día me parti el pie',
-          create_date: '2024-11-2'
-        }
-      ]
-    },
-    {
-      id: 2,
-      title: 'Obtener un trabajo como programador',
-      motivation: 
-        'Signigica mi realización como profecional y una fuente grande de ingresos',
-      category: 'Trabajo',
-      finalitation_date: '2025-1-1',
-      steps: [
-        {
-          id: 1,
-          title: 'Actualizar cv',
-          checked: true,
-          description: 'Enllace al protfolio, proyectos importantes etc',
-          position: 0
-        },
-        {
-          id: 2,
-          title: 'Revisar bolsas de emprelo',
-          checked: false,
-          description: '',
-          position: 1
-        }
-      ],
-      notes: [
-        {
-          id: 1,
-          note: 'El primer día me parti el pie',
-          create_date: '2024-11-2'
-        }
-      ]
-    },
-    {
-      title: 'fsd',
-      motivation: '',
-      category: '',
-      finalitation_date: '',
-      id: 'Ma9b84C0v',
-    }
-  ]

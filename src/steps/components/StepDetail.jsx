@@ -4,6 +4,7 @@ import DeleteStep from './DeleteStep';
 import { useGoal } from '../../goals/hooks/useGoal';
 
 export function StepDetail() {
+   
     const { editStep, goals } = useGoal();
     const { stepId, goalId } = useParams();
     const navigate = useNavigate();
@@ -37,7 +38,7 @@ export function StepDetail() {
                     <textarea id="description" style={{ minHeight: 250 }} className="col-12" value={step?.description || ''} onChange={handleChange} />
                 </div>
                 <div>
-                    <button className="btn btn-secondary mx-3" onClick={() => navigate(-1)}>
+                    <button className="btn btn-secondary mx-3" onClick={() => navigate("/goal/"+goalId+"/tab?tab=Pasos")} >
                         <i className="material-symbols-outlined">arrow_back</i>
                     </button>
                     <button className="btn btn-secondary mx-3" onClick={() => setShowModal("DELETE")}>

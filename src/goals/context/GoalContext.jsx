@@ -86,6 +86,29 @@ export function GoalProvider({ children }) {
 
     }
 
+    function createNote(note,goalId) {
+        note.id = shortid.generate()
+        const goal = goals.find(goal => goal.id === goalId)
+        goal.notes.push(note)
+        console.log(goal.notes);
+        editGoal(goal)
+    }
+
+    
+    function editNote(note, goalId) {
+        const goal = goals.find(goal => goal.id === goalId);    
+        goal.notes = goal.notes.map(auxNote=> auxNote.id === note.id ? note : auxNote);
+        editGoal(goal);
+    }
+    function deleteNote(noteId, goalId) {
+
+        const goal = goals.find(goal => goal.id === goalId);
+
+        goal.notes = goal.notes.filter(note => note.id !== noteId)
+
+        editGoal(goal)
+
+    }
 
     return (
         <goalContext.Provider
@@ -97,7 +120,10 @@ export function GoalProvider({ children }) {
                 changPositionOfGoal,
                 createStep,
                 editStep,
-                deleteStep
+                deleteStep,
+                createNote,
+                editNote,
+                deleteNote,
             }}
         >
             {children}

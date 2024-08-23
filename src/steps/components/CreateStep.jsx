@@ -37,7 +37,7 @@ export function CreateStep() {
             return
         }
             createStep(step, goalId)
-        navigate("/goal/2/tab?tab=Pasos")
+        navigate("/goal/"+goalId+"/tab?tab=Pasos")
     }
 
     return (
@@ -52,7 +52,7 @@ export function CreateStep() {
                     <textarea id="description" style={{ minHeight: 250 }} className="col-12" value={step.description} onChange={handleChange} />
                 </div>
                 <div>
-                    <button className="btn btn-secondary mx-3" onClick={() => navigate(-1)} >
+                    <button className="btn btn-secondary mx-3" onClick={() => navigate("/goal/"+goalId+"/tab?tab=Pasos")} >
                         <i className="material-symbols-outlined">
                             arrow_back
                         </i>

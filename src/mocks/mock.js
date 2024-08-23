@@ -15,7 +15,7 @@ export const mock_goals = [
         title: "Obtener un trabajo como programador",
         motivation: "Signigica mi realización como profecional y una fuente grande de ingresos",
         category: "Trabajo",
-        finalitation_date: "2025-1-1",
+        dateFinalitation: "2025-1-1",
         completed:false,
         steps: [
             {
@@ -37,7 +37,7 @@ export const mock_goals = [
             {
                 id: "1",
                 note: "El primer día me parti el pie",
-                create_date: "2024-11-2"
+                dateCreate: "2024-11-2"
             }
 
         ]
@@ -46,7 +46,7 @@ export const mock_goals = [
         title: "Correr 20 millas",
         motivation: "Signigica mi realización como profecional y una fuente grande de ingresos",
         category: "Trabajo",
-        finalitation_date: "2025-1-1",
+        dateFinalitation: "2025-1-1",
         completed:false,
         steps: [
             {
@@ -68,7 +68,7 @@ export const mock_goals = [
             {
                 id: "1",
                 note: "El primer día me parti el pie",
-                create_date: "2024-11-2"
+                dateCreate: "2024-11-2"
             }
 
         ]
@@ -82,7 +82,7 @@ export const habits = [
         description: "Esto es para ir al trabajo",
         position: 0,
         sckechduule: "5:00 am",
-        days_of_the_week: [
+        daysOfWeek: [
             "LUNES",
             "MARTES",
             "MIERCOLES",
@@ -96,7 +96,7 @@ export const habits = [
         description: "Esto es para ir al trabajo",
         position: 2,
         sckechduule: "5:00 am",
-        days_of_the_week: [
+        daysOfWeek: [
             "LUNES",
             "MARTES",
             "MIERCOLES",
@@ -118,7 +118,7 @@ export const tasks = [
         description: "Esto es para ir al trabajo",
         position: 2,
         sckechduule: "5:00 am",
-        days_of_the_week: [
+        daysOfWeek: [
             "LUNES",
             "MARTES",
             "MIERCOLES",

@@ -11,9 +11,7 @@ export default function StepGoal({ step, goalId }) {
             <div>
                 <h3>{step?.title}</h3>
                 <p>{step?.description.substring(0, 35)}</p>
-
             </div>
-
         </div>
     </>
 

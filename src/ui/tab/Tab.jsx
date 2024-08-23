@@ -11,6 +11,7 @@ const Tabs = ({ tabs }) => {
 
     const intitialTab = () => {
         console.log(tab);
+        //cambiar esta condicion para cuando no se encuentre un label de la lista que coincida con el tab de la query
         if(!tab){
             return tabs[0].label
         }else{

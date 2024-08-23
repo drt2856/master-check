@@ -10,6 +10,9 @@ import StepGoal from './steps/components/StepGoal';
 import { StepDetail } from './steps/components/StepDetail';
 import { CreateStep } from './steps/components/CreateStep';
 import CreateGoal from './goals/component/CreateGoal';
+import Note from './notes/components/Note';
+import { CreateNote } from './notes/components/CreateNote';
+import { NoteDetail } from './notes/components/NoteDetail';
 
 
 function App() {
@@ -21,10 +24,13 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<GoalPage />} />
-          <Route path="/goal/:id/:tab" element={<GoalDetail />} />
+          <Route path="/goal/:id/tab" element={<GoalDetail />} />
           <Route path="/goal/create/" element={<CreateGoal />} />
           <Route path="/goal/:goalId/step/:stepId" element={<StepDetail />} />
           <Route path="/goal/:goalId/step/create/" element={<CreateStep />} />
+          <Route path="/goal/:goalId/note/:noteId/" element={<NoteDetail />} />
+          <Route path="/goal/:goalId/note/create/" element={<CreateNote />} />
+
 
         </Routes>
       </Router>

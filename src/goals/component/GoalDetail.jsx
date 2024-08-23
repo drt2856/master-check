@@ -6,6 +6,7 @@ import Tabs from "../../ui/tab/Tab";
 import DeleteGoal from "./DeleteGoal";
 import EditGoal from "./EditGoal";
 import { Steps } from "../../steps/components/Steps";
+import { Notes } from "../../notes/components/Notes";
 
 export default function GoalDetail() {
 
@@ -97,14 +98,7 @@ export default function GoalDetail() {
                     },
                     {
                         label: "Notas",
-                        component:
-                            <div id="notes">
-                                <h2>Notas</h2>
-                                {/* deben ser ordendas de  nuevo a  antigua */}
-                                {goal?.notes && goal.notes.map(note => (
-                                    <NoteGoal key={note.id} note={note} />
-                                ))}
-                            </div>
+                        component:<Notes goal={goal}/> 
                     }
 
                 ]

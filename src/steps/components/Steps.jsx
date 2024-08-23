@@ -1,11 +1,8 @@
-import { useState } from "react";
+
 import StepGoal from "./StepGoal";
-import { StepDetail } from "./StepDetail";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 
 export function Steps({ goal }) {
-
-
 
     return (<div id="steps">
         <h2>Pasos</h2>
@@ -17,8 +14,5 @@ export function Steps({ goal }) {
             to={"/goal/" + goal.id + "/step/create/"}
             className="btn btn-primary redounder"
         >+</NavLink>
-
-
     </div>)
-
 }

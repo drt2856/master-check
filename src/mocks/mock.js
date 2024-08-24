@@ -105,7 +105,7 @@ export const habits = [
         ]
     }
 ]
-export const tasks = [
+export const mock_tasks = [
     {
         id: "0",
         title: "Arreglar el televisor",

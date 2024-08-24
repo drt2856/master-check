@@ -13,6 +13,8 @@ import CreateGoal from './goals/component/CreateGoal';
 import Note from './notes/components/Note';
 import { CreateNote } from './notes/components/CreateNote';
 import { NoteDetail } from './notes/components/NoteDetail';
+import { Tasks } from './tasks/components/Tasks';
+import { TaskProvider } from './tasks/context/TaskContext';
 
 
 function App() {
@@ -20,7 +22,7 @@ function App() {
 
   return (
     <GoalProvider>
-
+      <TaskProvider>
       <Router>
         <Routes>
           <Route path="/" element={<GoalPage />} />
@@ -30,10 +32,13 @@ function App() {
           <Route path="/goal/:goalId/step/create/" element={<CreateStep />} />
           <Route path="/goal/:goalId/note/:noteId/" element={<NoteDetail />} />
           <Route path="/goal/:goalId/note/create/" element={<CreateNote />} />
+          <Route path="/task/" element={<Tasks />} />
 
 
         </Routes>
       </Router>
+      </TaskProvider>
+      
     </GoalProvider>
 
 

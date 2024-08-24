@@ -1,7 +1,7 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useGoal } from '../../goals/hooks/useGoal';
-import DeleteNote from './DeleteStep';
+import DeleteNote  from './DeleteNote';
 
 export function NoteDetail() {
    
@@ -25,7 +25,6 @@ export function NoteDetail() {
         setNote(prevState => ({ ...prevState, [id]: value }));
     };
 
-
     return (
         <div>
             <div>
@@ -38,7 +37,7 @@ export function NoteDetail() {
                     <button className="btn btn-secondary mx-3" onClick={() => navigate("/goal/"+goalId+"/tab?tab=Notas")} >
                         <i className="material-symbols-outlined">arrow_back</i>
                     </button>
-                    <button className="btn btn-secondary mx-3" onClick={() => setShowModal("DELETE")}>
+                    <button className="btn btn-danger mx-3" onClick={() => setShowModal("DELETE")}>
                         <i className="material-symbols-outlined">delete</i>
                     </button>
                 </div>

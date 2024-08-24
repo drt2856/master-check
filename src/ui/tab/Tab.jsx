@@ -24,6 +24,7 @@ const Tabs = ({ tabs }) => {
 
     const handleTabClick = (label) => {
         setActiveTab(label);
+        //poner aqui en la ruta tab = label
     };
 
     return (

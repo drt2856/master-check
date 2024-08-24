@@ -5,6 +5,10 @@ export default function Note({ note, goalId }) {
 
     const navigate = useNavigate()
 
+    
+
+
+// hay que asegurarse de que el date salga con el formato adecuado , cada navegador hace lo que le de la gana con eso
     return (<>
         <div className="goal" onClick={()=>navigate("/goal/"+goalId+"/note/"+note?.id)} >
             <div>

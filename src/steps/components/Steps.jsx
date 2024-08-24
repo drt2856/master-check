@@ -8,7 +8,7 @@ export function Steps({ goal }) {
         <h2>Pasos</h2>
         {/* deben ser ordenados por el atributo position */}
         {goal?.steps && goal.steps.map(step => (
-            <StepGoal step={step} key={step.id} goalId={goal.id} />
+            <StepGoal prevStep={step} key={step.id} goalId={goal.id} />
         ))}
         <NavLink
             to={"/goal/" + goal.id + "/step/create/"}

@@ -21,7 +21,7 @@ export default function DeleteNote({ setShowModal, goalId, noteId }) {
                     <button className="btn-secondary btn" onClick={() => setShowModal("none")}>
                         Cancelar
                     </button>
-                    <button value="Eliminar" className="btn-primary btn" onClick={deleteG} >de</button>
+                    <button value="Eliminar" className="btn-danger btn" onClick={deleteG} >Eliminar</button>
                 </div>
             </div>
 

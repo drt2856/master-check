@@ -3,11 +3,9 @@ import { GoalProvider } from "../context/GoalContext"
 import Goals from "../component/Goals"
 
 export default function GoalPage() {
-  
+
 
     return (
-        <GoalProvider>
-            <Goals />
-        </GoalProvider>
+        <Goals />
     )
 }

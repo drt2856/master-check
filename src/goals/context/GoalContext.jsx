@@ -1,7 +1,7 @@
-import React, { createContext, useCreteContext } from "react"
+import React, { createContext } from "react"
 import { useState } from "react";
-import { mock_goals } from "../../mocks/mock";
 import shortid from "shortid";
+import { mock_goals } from "../../mocks/mock";
 
 export const goalContext = createContext();
 
@@ -70,11 +70,11 @@ export function GoalProvider({ children }) {
     }
 
     function editStep(step, goalId) {
-        const goal = goals.find(goal => goal.id === goalId);    
+        const goal = goals.find(goal => goal.id === goalId);
         goal.steps = goal.steps.map(auxStep => auxStep.id === step.id ? step : auxStep);
         editGoal(goal);
     }
-    
+
 
     function deleteStep(stepId, goalId) {
 
@@ -86,7 +86,7 @@ export function GoalProvider({ children }) {
 
     }
 
-    function createNote(note,goalId) {
+    function createNote(note, goalId) {
         note.id = shortid.generate()
         const goal = goals.find(goal => goal.id === goalId)
         goal.notes.push(note)
@@ -94,10 +94,10 @@ export function GoalProvider({ children }) {
         editGoal(goal)
     }
 
-    
+
     function editNote(note, goalId) {
-        const goal = goals.find(goal => goal.id === goalId);    
-        goal.notes = goal.notes.map(auxNote=> auxNote.id === note.id ? note : auxNote);
+        const goal = goals.find(goal => goal.id === goalId);
+        goal.notes = goal.notes.map(auxNote => auxNote.id === note.id ? note : auxNote);
         editGoal(goal);
     }
     function deleteNote(noteId, goalId) {

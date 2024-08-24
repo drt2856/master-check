@@ -16,6 +16,7 @@ import { NoteDetail } from './notes/components/NoteDetail';
 import { Tasks } from './tasks/components/Tasks';
 import { TaskProvider } from './tasks/context/TaskContext';
 import { CreateTask } from './tasks/components/CreateTask';
+import { TaskDetail } from './tasks/components/TaskDetail';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
           <Route path="/goal/:goalId/note/create/" element={<CreateNote />} />
           <Route path="/task/" element={<Tasks />} />
           <Route path="/task/create/" element={<CreateTask />} />
+          <Route path="/task/:taskId/" element={<TaskDetail />} />
 
 
         </Routes>

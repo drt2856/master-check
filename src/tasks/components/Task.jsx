@@ -28,7 +28,7 @@ export default function Task({ prevTask }) {
                 checked={task?.checked}
                 onChange={handleChange}
             />
-            <div className="col-11" onClick={() => navigate("/task/")}>
+            <div className="col-11" onClick={() => navigate("/task/"+task.id)}>
                 <h3>{task?.title}</h3>
             </div>
         </div>

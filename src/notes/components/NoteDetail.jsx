@@ -1,7 +1,7 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useGoal } from '../../goals/hooks/useGoal';
-import DeleteNote  from './DeleteNote';
+import DeleteNote  from '../../tasks/components/DeleteTask';
 
 export function NoteDetail() {
    

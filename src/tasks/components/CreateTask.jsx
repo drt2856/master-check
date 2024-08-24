@@ -1,18 +1,17 @@
 import { useState } from "react";
-import { useGoal } from "../../goals/hooks/useGoal";
+import { useTask } from "../../tasks/hooks/useTask";
 import { useNavigate, useParams } from "react-router-dom";
 
-export function CreateNote() {
+export function CreateTask() {
 
-    const { goalId } = useParams()
+   
 
-    const [note, setNote] = useState({
+    const [task, setTask] = useState({
         id: "",
-        note: "",
-        dateCreate: new Date()
+        title: "",
     })
 
-    const { createNote } = useGoal()
+    const { createTask } = useTask()
 
     const navigate = useNavigate()
 
@@ -20,7 +19,7 @@ export function CreateNote() {
     function handleChange(event) {
         
 
-        setNote((prevState) => ({
+        setTask((prevState) => ({
             ...prevState,
             [event.target.id]: event.target.value
         }))
@@ -28,20 +27,19 @@ export function CreateNote() {
 
     function handleSubmit(event) {
         event.preventDefault();
-        
-            createNote(note, goalId)
-        navigate("/goal/"+goalId+"/tab?tab=Notas")
+            createTask(task)
+        navigate("/task/")
     }
 
     return (
         <div>
             <div className="" >
                 <div>
-                    <label htmlFor="note" className="col-12">Nota</label>
-                    <textarea id="note" style={{ minHeight: 250 }} className="col-12" value={note.note} onChange={handleChange} />
+                    <label htmlFor="tilte" className="col-12">Tarea</label>
+                    <textarea id="title" style={{ minHeight: 250 }} className="col-12" value={task.task} onChange={handleChange} />
                 </div>
                 <div>
-                    <button className="btn btn-secondary mx-3" onClick={() => navigate("/goal/"+goalId+"/tab?tab=Notas")} >
+                    <button className="btn btn-secondary mx-3" onClick={() => navigate("/task/")} >
                         <i className="material-symbols-outlined">
                             arrow_back
                         </i>

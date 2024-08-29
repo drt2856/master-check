@@ -1,7 +1,7 @@
 import React, { createContext } from "react"
 import { useState } from "react";
 import shortid from "shortid";
-import { mock_goals } from "../../mocks/mock";
+import { mock_goals } from "../../../mocks/mock";
 
 export const goalContext = createContext();
 

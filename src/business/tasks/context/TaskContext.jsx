@@ -1,7 +1,7 @@
 import React, { createContext } from "react"
 import { useState } from "react";
 import shortid from "shortid";
-import { mock_tasks } from "../../mocks/mock";
+import { mock_tasks } from "../../../mocks/mock";
 
 export const taskContext = createContext();
 

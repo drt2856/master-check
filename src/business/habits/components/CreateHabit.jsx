@@ -1,24 +1,26 @@
-import React, { useMemo, useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { useHabit } from '../../habits/hooks/useHabit';
-import DeleteHabit from './DeleteHabit';
+import { useState } from "react";
+import { useHabit } from "../hooks/useHabit";
+import { useNavigate, useParams } from "react-router-dom";
 
-export function HabitDetail() {
 
-    const { editHabit, habits } = useHabit();
-    const { habitId } = useParams();
+export function CreateHabit() {
+    const [habit, setHabit] = useState({
+        id: "",
+        title: "",
+        description: "",
+        days: {
+            lunes: true,
+            martes: true,
+            miercoles: true,
+            jueves: true,
+            viernes: true,
+            sabado: true,
+            domingo: true,
+        }
+    });
+
+    const { createHabit } = useHabit();
     const navigate = useNavigate();
-
-    const initialState = useMemo(() => {
-        return habits.find(habit => habit.id === habitId);
-    }, [habits, habitId]);
-
-    const [showModal, setShowModal] = useState("none");
-    const [habit, setHabit] = useState(initialState);
-
-    useEffect(() => {
-        editHabit(habit);
-    }, [habit]);
 
     function handleChange(event) {
         const { id, value, type, checked } = event.target;
@@ -28,8 +30,14 @@ export function HabitDetail() {
         }));
     }
 
+    function handleSubmit(event) {
+        event.preventDefault();
+        createHabit(habit);
+        navigate("/habit/");
+    }
+
     return (
-        <div className='p-2'>
+        <div className="">
             <div>
                 <label htmlFor="title" className="col-12">Nombre</label>
                 <input type="text" id="title" className="col-12" value={habit.title} onChange={handleChange} />
@@ -64,15 +72,16 @@ export function HabitDetail() {
                     </div>
                 ))}
             </div>
-            <div className='mt-5'>
+            <div className="mt-5">
                 <button className="btn btn-secondary mx-3" onClick={() => navigate("/habit/")} >
-                    <i className="material-symbols-outlined">arrow_back</i>
+                    <i className="material-symbols-outlined">
+                        arrow_back
+                    </i>
                 </button>
-                <button className="btn btn-danger mx-3" onClick={() => setShowModal("DELETE")}>
-                    <i className="material-symbols-outlined">delete</i>
-                </button>
+                <button className="btn btn-primary" onClick={handleSubmit}>crear</button>
             </div>
-            {showModal === "DELETE" && <DeleteHabit setShowModal={setShowModal} habitId={habitId} />}
         </div>
     );
+    
+
 }

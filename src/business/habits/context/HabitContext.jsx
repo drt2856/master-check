@@ -1,7 +1,7 @@
 import React, { createContext } from "react"
 import { useState } from "react";
 import shortid from "shortid";
-import { mock_habits } from "../../mocks/mock";
+import { mock_habits } from "../../../mocks/mock";
 
 export const habitContext = createContext();
 

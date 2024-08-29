@@ -2,7 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import NoteGoal from "./NoteGoal";
 import { useGoal } from "../hooks/useGoal";
 import { useEffect, useState } from "react";
-import Tabs from "../../ui/tab/Tab";
+import Tabs from "../../../ui/tab/Tab";
 import DeleteGoal from "./DeleteGoal";
 import EditGoal from "./EditGoal";
 import { Steps } from "../../steps/components/Steps";

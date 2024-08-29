@@ -1,8 +1,6 @@
-import { useState } from "react";
+
 import { useGoal } from "../hooks/useGoal";
-import CreateGoal from "./CreateGoal";
 import Goal from "./Goal";
-import GoalDetail from "./GoalDetail";
 import { NavLink } from "react-router-dom";
 
 export default function Goals() {

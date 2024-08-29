@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Goals from './goals/component/Goals';
 import { GoalProvider } from './goals/context/GoalContext';
@@ -27,18 +27,16 @@ function App() {
       <TaskProvider>
       <Router>
         <Routes>
-          <Route path="/master-check/" element={<GoalPage />} />
-          <Route path="/master-check/goal/:id/tab" element={<GoalDetail />} />
-          <Route path="/master-check/goal/create/" element={<CreateGoal />} />
-          <Route path="/master-check/goal/:goalId/step/:stepId" element={<StepDetail />} />
-          <Route path="/master-check/goal/:goalId/step/create/" element={<CreateStep />} />
-          <Route path="/master-check/goal/:goalId/note/:noteId/" element={<NoteDetail />} />
-          <Route path="/master-check/goal/:goalId/note/create/" element={<CreateNote />} />
-          <Route path="/master-check/task/" element={<Tasks />} />
-          <Route path="/master-check/task/create/" element={<CreateTask />} />
-          <Route path="/master-check/task/:taskId/" element={<TaskDetail />} />
-
-
+          <Route path="/" element={<GoalPage />} />
+          <Route path="/goal/:id/tab" element={<GoalDetail />} />
+          <Route path="/goal/create/" element={<CreateGoal />} />
+          <Route path="/goal/:goalId/step/:stepId" element={<StepDetail />} />
+          <Route path="/goal/:goalId/step/create/" element={<CreateStep />} />
+          <Route path="/goal/:goalId/note/:noteId/" element={<NoteDetail />} />
+          <Route path="/goal/:goalId/note/create/" element={<CreateNote />} />
+          <Route path="/task/" element={<Tasks />} />
+          <Route path="/task/create/" element={<CreateTask />} />
+          <Route path="/task/:taskId/" element={<TaskDetail />} />
         </Routes>
       </Router>
       </TaskProvider>

@@ -1,5 +1,5 @@
 import React, { useMemo, useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, NavLink } from 'react-router-dom';
 import { useGoal } from '../../goals/hooks/useGoal';
 import DeleteNote  from '../../tasks/components/DeleteTask';
 
@@ -34,9 +34,9 @@ export function NoteDetail() {
                     <textarea id="note" style={{ minHeight: 250 }} className="col-12" value={note?.note || ''} onChange={handleChange} />
                 </div>
                 <div>
-                    <button className="btn btn-secondary mx-3" onClick={() => navigate("/goal/"+goalId+"/tab?tab=Notas")} >
+                    <NavLink className="btn btn-secondary mx-3" to={"/goal/"+goalId+"/tab?tab=Notas"}  >
                         <i className="material-symbols-outlined">arrow_back</i>
-                    </button>
+                    </NavLink>
                     <button className="btn btn-danger mx-3" onClick={() => setShowModal("DELETE")}>
                         <i className="material-symbols-outlined">delete</i>
                     </button>

@@ -75,35 +75,21 @@ export const mock_goals = [
     }
 ]
 
-export const habits = [
+export const mock_habits = [
     {
-        id: "0",
-        title: "Levantarse a las 5 de la mañana",
-        description: "Esto es para ir al trabajo",
-        position: 0,
-        sckechduule: "5:00 am",
-        daysOfWeek: [
-            "LUNES",
-            "MARTES",
-            "MIERCOLES",
-            "JUEVES",
-            "VIERNES"
-        ]
-    },
-    {
-        id: "1",
-        title: "Levantarse a las 5 de la mañana",
-        description: "Esto es para ir al trabajo",
-        position: 2,
-        sckechduule: "5:00 am",
-        daysOfWeek: [
-            "LUNES",
-            "MARTES",
-            "MIERCOLES",
-            "JUEVES",
-            "VIERNES"
-        ]
-    }
+        id: "5N6jFiPnW",
+        title: "(Ejemplo) Levantarse a las 5 a correr",
+        description: "Este hábito forma parte de mi meta de bajar de peso, lo considero  importante para ello. Debo darle 5 vueltas a la cuadra  y revisar semanalmente  mi progreso",
+        days: {
+          lunes: true,
+          martes: false,
+          miercoles: true,
+          jueves: false,
+          viernes: true,
+          sabado: false,
+          domingo: false
+        }
+      }
 ]
 export const mock_tasks = [
     {

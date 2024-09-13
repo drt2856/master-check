@@ -19,6 +19,7 @@ import { CreateHabit } from './business/habits/components/CreateHabit';
 import { HabitDetail } from './business/habits/components/HabitDetail';
 import { HabitProvider } from './business/habits/context/HabitContext';
 import { Header } from './ui/header/Header';
+import HomePage from './pages/HomePage';
 
 
 function App() {
@@ -26,32 +27,33 @@ function App() {
 
   return (
     <GoalProvider>
-        <TaskProvider>
-            <HabitProvider>
-                <Router>
-                    <Header />
-                    <div style={{ padding: 25 }}>
-                        <Routes>
-                            <Route path="/goal" element={<GoalPage />} />
-                            <Route path="/goal/:id/tab" element={<GoalDetail />} />
-                            <Route path="/goal/create/" element={<CreateGoal />} />
-                            <Route path="/goal/:goalId/step/:stepId" element={<StepDetail />} />
-                            <Route path="/goal/:goalId/step/create/" element={<CreateStep />} />
-                            <Route path="/goal/:goalId/note/:noteId/" element={<NoteDetail />} />
-                            <Route path="/goal/:goalId/note/create/" element={<CreateNote />} />
-                            <Route path="/task/" element={<Tasks />} />
-                            <Route path="/task/create/" element={<CreateTask />} />
-                            <Route path="/task/:taskId/" element={<TaskDetail />} />
-                            <Route path="/habit/" element={<Habits />} />
-                            <Route path="/habit/create/" element={<CreateHabit />} />
-                            <Route path="/habit/:habitId/" element={<HabitDetail />} />
-                        </Routes>
-                    </div>
-                </Router>
-            </HabitProvider>
-        </TaskProvider>
+      <TaskProvider>
+        <HabitProvider>
+          <Router>
+            <Header />
+            <div style={{ padding: 25 }}>
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/goal" element={<GoalPage />} />
+                <Route path="/goal/:id/tab" element={<GoalDetail />} />
+                <Route path="/goal/create/" element={<CreateGoal />} />
+                <Route path="/goal/:goalId/step/:stepId" element={<StepDetail />} />
+                <Route path="/goal/:goalId/step/create/" element={<CreateStep />} />
+                <Route path="/goal/:goalId/note/:noteId/" element={<NoteDetail />} />
+                <Route path="/goal/:goalId/note/create/" element={<CreateNote />} />
+                <Route path="/task/" element={<Tasks />} />
+                <Route path="/task/create/" element={<CreateTask />} />
+                <Route path="/task/:taskId/" element={<TaskDetail />} />
+                <Route path="/habit/" element={<Habits />} />
+                <Route path="/habit/create/" element={<CreateHabit />} />
+                <Route path="/habit/:habitId/" element={<HabitDetail />} />
+              </Routes>
+            </div>
+          </Router>
+        </HabitProvider>
+      </TaskProvider>
     </GoalProvider>
-);
+  );
 
 }
 

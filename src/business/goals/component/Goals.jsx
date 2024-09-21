@@ -12,14 +12,7 @@ export default function Goals() {
 
     return (
         <div>
-            <div>
-                <button className="btn btn-primary">
-                    Todos
-                </button>
-                <button className="btn btn-primary">
-                    Todos
-                </button>
-            </div>
+            
             <div>
                 {goals.map(goal => (
                     <Goal key={goal.id} goal={goal} />

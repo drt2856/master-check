@@ -32,6 +32,7 @@ function App() {
                     <Header />
                     <div style={{ padding: 25 }}>
                         <Routes>
+                        <Route path="/" element={<GoalPage />} />
                             <Route path="/goal" element={<GoalPage />} />
                             <Route path="/goal/:id/tab" element={<GoalDetail />} />
                             <Route path="/goal/create/" element={<CreateGoal />} />

@@ -19,8 +19,9 @@ export default function StepGoal({ prevStep, goalId }) {
         setStep(prevState => ({ ...prevState, [id]: checked }));
     };
 
-    return (<>
-        <div className="goal"  >
+    return (
+    <div className="goal align-items-center row">
+        <div className="col-auto">
             <input
                 type="checkbox"
                 style={{ width: 25, height: 25 }}
@@ -28,12 +29,12 @@ export default function StepGoal({ prevStep, goalId }) {
                 checked={step?.checked}
                 onChange={handleChange}
             />
-            <div onClick={() => navigate("/goal/" + goalId + "/step/" + step?.id)}>
-                <h3>{step?.title}</h3>
-                <p>{step?.description.substring(0, 35)}</p>
-            </div>
         </div>
-    </>
+        <div className="col" onClick={() => navigate("/goal/" + goalId + "/step/" + step?.id)}>
+            <p>{step?.title}</p>
+        </div>
+    </div>
+    
 
     )
 }

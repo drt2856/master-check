@@ -19,20 +19,21 @@ export default function Task({ prevTask }) {
         setTask(prevState => ({ ...prevState, [id]: checked }));
     };
 
-    return (<>
-        <div className="goal row"  >
-            <input
-                type="checkbox"
-                style={{ width: 25, height: 25 , marginLeft:0}}
-                id="checked"
-                checked={task?.checked}
-                onChange={handleChange}
-            />
-            <div className="col-11" onClick={() => navigate("/task/"+task.id)}>
-                <h3>{task?.title}</h3>
+    return (
+        <div className="goal row align-items-center">
+            <div className="col-auto">
+                <input
+                    type="checkbox"
+                    style={{ width: 25, height: 25, marginLeft: 0 }}
+                    id="checked"
+                    checked={task?.checked}
+                    onChange={handleChange}
+                />
+            </div>
+            <div className="col" onClick={() => navigate("/task/" + task.id)}>
+                {task?.title}
             </div>
         </div>
-    </>
 
     )
 }

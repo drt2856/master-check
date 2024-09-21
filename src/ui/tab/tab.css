@@ -1,6 +1,7 @@
 .tab-buttons {
     display: flex;
     border-bottom: 1px solid #ccc;
+    justify-content: space-around;
   }
   
   .tab-buttons button {

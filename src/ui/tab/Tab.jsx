@@ -28,8 +28,8 @@ const Tabs = ({ tabs }) => {
     };
 
     return (
-        <div className='min-container'>
-            <div className="tab-buttons">
+        <div >
+            <div className="tab-buttons ">
                 {tabs.map((tab) => (
                     <button
                         key={tab.label}
